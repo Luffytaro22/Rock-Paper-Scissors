@@ -23,10 +23,11 @@ body{
     height: 200px;
     border: 1px solid black;
     border-radius: 10px;
+    transition: all .1s ease;
 }
 .sub-container img:hover{
     cursor:pointer;
-    box-shadow: 5px 5px 5px 5px rgba(10, 106, 119, 0.5);
+    /*box-shadow: 5px 5px 5px 5px rgba(10, 106, 119, 0.5);*/
 }
 .counter, .result{
     margin-top: 80px;
@@ -45,4 +46,20 @@ button{
 }
 button:hover{
     cursor:pointer;
+    transform:scale(1.1);
+    border-color: rgb(0, 8, 126);
+    box-shadow: 0 0 20px rgb(0, 8, 126);
 }
+
+.playing {
+    transform: scale(1.1);
+    border-color: rgb(0, 8, 126);
+    box-shadow: 0 0 30px rgb(0, 8, 126);
+  }
+
+  .winner{
+    display: none;
+  }
+  .losser{
+    display: none;
+  }
