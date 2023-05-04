@@ -17,6 +17,7 @@ body{
     justify-content: center;
     align-items: center;
     gap: 50px;
+    flex-wrap: wrap;
 }
 .sub-container img{
     width: 300px;
@@ -30,7 +31,7 @@ body{
     /*box-shadow: 5px 5px 5px 5px rgba(10, 106, 119, 0.5);*/
 }
 .counter, .result{
-    margin-top: 80px;
+    margin-top: 30px;
     display:flex;
     justify-content: center;
     gap: 50px;
@@ -62,4 +63,20 @@ button:hover{
   }
   .losser{
     display: none;
+  }
+
+  @media only screen and (max-width: 756px) {
+    .sub-container img {
+        width: 50%;
+        height: 50%;
+        float: left;
+    }
+
+    .counter {
+        flex-direction: column;
+        align-items: center;
+        position: absolute;
+        top: 80%;
+        left: 70%;
+    }
   }
