@@ -1,16 +1,20 @@
 
 var countP = 0;
 var countM = 0;
+var choiceP = "";
+var choiceM = "";
+
 const computerPlay = () => {
-    const game = ['rock', 'paper', 'scissors'];
+    const game = ['Rock', 'Paper', 'Scissors'];
     const randomIndex = Math.floor(Math.random() * game.length);
-    return game[randomIndex];
+    return choiceM = game[randomIndex];
 };
 
 const playRound = (playerSelection, computerSelection) => {
     const p = playerSelection.toLowerCase();
     const c = computerSelection.toLowerCase();
     if(p === "paper" && c === 'rock' || p === 'rock' && c === 'scissors' || p === 'scissors' && c === 'paper'){
+        choiceP = p;
         return countP++;
     }else if(p === c){
         countP = countP;
@@ -29,6 +33,8 @@ let winner = document.querySelector('.winner');
 let losser = document.querySelector('.losser');
 let main = document.querySelector('.main');
 let buttons = document.querySelectorAll('button');
+let playerChoice = document.getElementById('player-choice');
+let computerChoice = document.getElementById('computer-choice');
 
 paper.addEventListener('click', function() {
     playRound('paper', computerPlay());
@@ -38,6 +44,8 @@ paper.addEventListener('click', function() {
     });
     player.innerHTML = countP;   //Para mostrar las variables en el cuerpo del documento dentro de la etiqueta span.
     computer.innerHTML = countM;
+    playerChoice.innerHTML = "Paper";
+    computerChoice.innerHTML = choiceM;
     if (countP === 5) {
         winner.classList.remove('winner');
         main.style.display = 'none';
@@ -55,6 +63,8 @@ rock.addEventListener('click', function() {
     });
     player.innerHTML = countP;
     computer.innerHTML = countM;
+    playerChoice.innerHTML = "Rock";
+    computerChoice.innerHTML = choiceM;
     if (countP === 5) {
         winner.classList.remove('winner');   //Si gana, se muestra el div "winner" y se esconde el div principal.
         main.style.display = 'none';
@@ -72,6 +82,8 @@ scissors.addEventListener('click', function() {
     });
     player.innerHTML = countP;
     computer.innerHTML = countM;
+    playerChoice.innerHTML = "Scissors";
+    computerChoice.innerHTML = choiceM;
     if (countP === 5) {
         winner.classList.remove('winner');
         main.style.display = 'none';
